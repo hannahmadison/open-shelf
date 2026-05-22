@@ -8,6 +8,8 @@ interface ReadEntry {
   tags: string[];
   blurb: string;
   dateAdded: string;
+  recommendations: number;
+  series: boolean;
 }
 
 interface Props {
@@ -124,10 +126,24 @@ export default function FilterableGrid({ reads }: Props) {
             rel="noopener noreferrer"
             className="group block bg-white border border-sand-200 rounded-lg p-6 shadow-sm hover:shadow-md hover:border-coral-300 transition-all duration-200"
           >
-            {/* Type badge */}
-            <span className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-medium border mb-3 ${TYPE_COLORS[read.type]}`}>
-              {TYPE_LABELS[read.type]}
-            </span>
+            <div className="flex items-center gap-2 mb-3">
+              {/* Type badge */}
+              <span className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-medium border ${TYPE_COLORS[read.type]}`}>
+                {TYPE_LABELS[read.type]}
+              </span>
+
+              {read.series && (
+                <span className="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-ocean-50 text-ocean-500 border border-ocean-200">
+                  Series
+                </span>
+              )}
+
+              {read.recommendations > 1 && (
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-seafoam-100 text-seafoam-500 border border-seafoam-200">
+                  {read.recommendations}x recommended
+                </span>
+              )}
+            </div>
 
             {/* Title */}
             <h3 className="font-display text-lg font-bold text-ocean-900 group-hover:text-coral-500 transition-colors leading-snug">

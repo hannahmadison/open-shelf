@@ -11,6 +11,9 @@ const reads = defineCollection({
     tags: z.array(z.string()),
     blurb: z.string(),
     date_added: z.coerce.date(),
+    recommendations: z.number().int().positive().default(1),
+    recommended_by: z.array(z.string()).optional(),
+    series: z.boolean().default(false),
   }),
 });
 
