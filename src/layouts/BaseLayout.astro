@@ -17,6 +17,15 @@ const { title } = Astro.props;
     <title>{title} | Open Shelf</title>
   </head>
   <body class="min-h-screen bg-navy-950 text-navy-100">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <a href="/" class="font-display font-bold text-white hover:text-amber-400 transition-colors">
+        Open Shelf
+      </a>
+      <div class="flex items-center gap-6 text-sm font-medium">
+        <a href="/" class="text-navy-300 hover:text-white transition-colors">Reads</a>
+        <a href="/viz" class="text-navy-300 hover:text-white transition-colors">Viz</a>
+      </div>
+    </nav>
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <slot />
     </main>
