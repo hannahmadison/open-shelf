@@ -23,6 +23,27 @@ date_added: 2026-05-22  # today's date
 
 5. Open a merge request
 
+## Already on the shelf?
+
+If the book, article, or blog you want to recommend is already listed:
+
+1. Find the existing file in `content/reads/`
+2. Bump the `recommendations` count by 1
+3. Optionally, add your name to `recommended_by` (totally optional — you can stay anonymous)
+4. Open a merge request
+
+For example, if `project-hail-mary.md` has `recommendations: 5`, change it to `recommendations: 6`. If you want credit, add:
+
+```yaml
+recommended_by: [Your Name]
+```
+
+or append to the existing list:
+
+```yaml
+recommended_by: [Existing Person, Your Name]
+```
+
 ## Guidelines
 
 - **One entry per MR** — keeps reviews fast
