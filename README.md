@@ -53,4 +53,4 @@ Content contributions are the opinions of their authors. The site code is open s
 
 ---
 
-*A community project. Not affiliated with or endorsed by Red Hat, Inc.*
+*A free community project.*
