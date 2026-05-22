@@ -21,9 +21,9 @@ const TYPE_LABELS: Record<ReadEntry["type"], string> = {
 };
 
 const TYPE_COLORS: Record<ReadEntry["type"], string> = {
-  book: "bg-amber-500/20 text-amber-300 border-amber-500/30",
-  article: "bg-sky-500/20 text-sky-300 border-sky-500/30",
-  blog: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
+  book: "bg-coral-100 text-coral-600 border-coral-200",
+  article: "bg-ocean-100 text-ocean-600 border-ocean-200",
+  blog: "bg-seafoam-100 text-seafoam-500 border-seafoam-200",
 };
 
 export default function FilterableGrid({ reads }: Props) {
@@ -67,15 +67,15 @@ export default function FilterableGrid({ reads }: Props) {
     <section className="pb-16">
       {/* Type filters */}
       <div className="flex flex-wrap items-center gap-2 mb-4">
-        <span className="text-navy-400 text-sm font-medium mr-1">Type:</span>
+        <span className="text-ocean-500 text-sm font-medium mr-1">Type:</span>
         {(["all", "book", "article", "blog"] as const).map((type) => (
           <button
             key={type}
             onClick={() => setActiveType(type)}
             className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
               activeType === type
-                ? "bg-amber-400 text-navy-950 border-amber-400"
-                : "bg-navy-900 text-navy-300 border-navy-700 hover:border-navy-500"
+                ? "bg-coral-400 text-white border-coral-400"
+                : "bg-white text-ocean-600 border-sand-300 hover:border-ocean-300"
             }`}
           >
             {type === "all" ? "All" : TYPE_LABELS[type]}
@@ -85,15 +85,15 @@ export default function FilterableGrid({ reads }: Props) {
 
       {/* Tag filters */}
       <div className="flex flex-wrap items-center gap-2 mb-8">
-        <span className="text-navy-400 text-sm font-medium mr-1">Tags:</span>
+        <span className="text-ocean-500 text-sm font-medium mr-1">Tags:</span>
         {allTags.map((tag) => (
           <button
             key={tag}
             onClick={() => toggleTag(tag)}
             className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
               activeTags.has(tag)
-                ? "bg-amber-400 text-navy-950 border-amber-400"
-                : "bg-navy-900 text-navy-300 border-navy-700 hover:border-navy-500"
+                ? "bg-coral-400 text-white border-coral-400"
+                : "bg-white text-ocean-600 border-sand-300 hover:border-ocean-300"
             }`}
           >
             {tag}
@@ -102,7 +102,7 @@ export default function FilterableGrid({ reads }: Props) {
         {hasFilters && (
           <button
             onClick={clearFilters}
-            className="px-3 py-1 text-xs text-navy-400 hover:text-navy-200 transition-colors"
+            className="px-3 py-1 text-xs text-ocean-400 hover:text-coral-500 transition-colors"
           >
             Clear all
           </button>
@@ -110,7 +110,7 @@ export default function FilterableGrid({ reads }: Props) {
       </div>
 
       {/* Results count */}
-      <p className="text-navy-500 text-sm mb-6">
+      <p className="text-sand-500 text-sm mb-6">
         {filtered.length} {filtered.length === 1 ? "entry" : "entries"}
       </p>
 
@@ -122,7 +122,7 @@ export default function FilterableGrid({ reads }: Props) {
             href={read.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block bg-navy-900 border border-navy-800 rounded-lg p-6 hover:border-amber-500/50 hover:bg-navy-800/80 transition-all duration-200"
+            className="group block bg-white border border-sand-200 rounded-lg p-6 shadow-sm hover:shadow-md hover:border-coral-300 transition-all duration-200"
           >
             {/* Type badge */}
             <span className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-medium border mb-3 ${TYPE_COLORS[read.type]}`}>
@@ -130,22 +130,22 @@ export default function FilterableGrid({ reads }: Props) {
             </span>
 
             {/* Title */}
-            <h3 className="font-display text-lg font-bold text-white group-hover:text-amber-300 transition-colors leading-snug">
+            <h3 className="font-display text-lg font-bold text-ocean-900 group-hover:text-coral-500 transition-colors leading-snug">
               {read.title}
             </h3>
 
             {/* Author */}
-            <p className="text-navy-400 text-sm mt-1">{read.author}</p>
+            <p className="text-ocean-400 text-sm mt-1">{read.author}</p>
 
             {/* Blurb */}
-            <p className="text-navy-300 text-sm mt-3 leading-relaxed">{read.blurb}</p>
+            <p className="text-ocean-600 text-sm mt-3 leading-relaxed">{read.blurb}</p>
 
             {/* Tags */}
             <div className="flex flex-wrap gap-1.5 mt-4">
               {read.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 bg-navy-800 text-navy-400 text-xs rounded-full"
+                  className="px-2 py-0.5 bg-sand-100 text-ocean-500 text-xs rounded-full"
                 >
                   {tag}
                 </span>
@@ -153,17 +153,17 @@ export default function FilterableGrid({ reads }: Props) {
             </div>
 
             {/* Date */}
-            <p className="text-navy-600 text-xs mt-4">{read.dateAdded}</p>
+            <p className="text-sand-400 text-xs mt-4">{read.dateAdded}</p>
           </a>
         ))}
       </div>
 
       {filtered.length === 0 && (
-        <div className="text-center py-16 text-navy-500">
+        <div className="text-center py-16 text-ocean-400">
           <p className="text-lg">No entries match your filters.</p>
           <button
             onClick={clearFilters}
-            className="mt-2 text-amber-400 hover:text-amber-300 text-sm transition-colors"
+            className="mt-2 text-coral-500 hover:text-coral-400 text-sm transition-colors"
           >
             Clear filters
           </button>

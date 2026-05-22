@@ -1,30 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap");
-
 @theme {
-  --color-navy-50: #f0f4f8;
-  --color-navy-100: #d9e2ec;
-  --color-navy-200: #bcccdc;
-  --color-navy-300: #9fb3c8;
-  --color-navy-400: #829ab1;
-  --color-navy-500: #627d98;
-  --color-navy-600: #486581;
-  --color-navy-700: #334e68;
-  --color-navy-800: #243b53;
-  --color-navy-900: #102a43;
-  --color-navy-950: #0a1929;
+  --color-sand-50: #fefcf9;
+  --color-sand-100: #faf6f0;
+  --color-sand-200: #f0ebe3;
+  --color-sand-300: #e0d8cc;
+  --color-sand-400: #c4b9a8;
+  --color-sand-500: #a89a85;
 
-  --color-amber-50: #fffbeb;
-  --color-amber-100: #fef3c7;
-  --color-amber-200: #fde68a;
-  --color-amber-300: #fcd34d;
-  --color-amber-400: #fbbf24;
-  --color-amber-500: #f59e0b;
-  --color-amber-600: #d97706;
-  --color-amber-700: #b45309;
-  --color-amber-800: #92400e;
-  --color-amber-900: #78350f;
+  --color-ocean-50: #eef6fa;
+  --color-ocean-100: #cde3f0;
+  --color-ocean-200: #a0cce0;
+  --color-ocean-300: #5eaece;
+  --color-ocean-400: #3891b5;
+  --color-ocean-500: #26768f;
+  --color-ocean-600: #1e5f75;
+  --color-ocean-700: #1a4d60;
+  --color-ocean-800: #163d4d;
+  --color-ocean-900: #102d3a;
+  --color-ocean-950: #0b1f28;
+
+  --color-coral-50: #fff5f3;
+  --color-coral-100: #ffe0db;
+  --color-coral-200: #ffbdb3;
+  --color-coral-300: #ff9a8a;
+  --color-coral-400: #ff7f6e;
+  --color-coral-500: #f06050;
+  --color-coral-600: #d94a3c;
+
+  --color-seafoam-50: #f0faf7;
+  --color-seafoam-100: #d5f0e8;
+  --color-seafoam-200: #a8e0d0;
+  --color-seafoam-300: #70ccb4;
+  --color-seafoam-400: #4db89e;
+  --color-seafoam-500: #35a088;
 
   --font-display: "Inter", system-ui, sans-serif;
   --font-body: "IBM Plex Sans", system-ui, sans-serif;
@@ -32,8 +42,8 @@
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-navy-950);
-  color: var(--color-navy-100);
+  background-color: var(--color-sand-50);
+  color: var(--color-ocean-800);
 }
 
 h1, h2, h3, h4, h5, h6 {
