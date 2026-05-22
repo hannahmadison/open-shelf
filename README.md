@@ -1,43 +1,56 @@
-# Astro Starter Kit: Minimal
+# Open Shelf
+
+**What we're reading, sharing, and thinking about.**
+
+A community reading list where anyone can share books, articles, and blogs they recommend. Built as a static site — contributions happen through pull requests.
+
+**Live site:** https://hannahmadison.github.io/open-shelf/
+
+## Add to the shelf
+
+The quickest way to contribute:
+
+1. Fork this repo
+2. Create a new `.md` file in `content/reads/` (e.g., `my-favorite-book.md`)
+3. Paste in this template and fill it out:
+
+```yaml
+---
+title: "Your Title Here"
+author: "Author Name"
+type: book
+link: "https://www.goodreads.com/search?q=Your+Title+Here"
+tags: [sci-fi, fiction]
+blurb: "A sentence or two about why you'd recommend this."
+date_added: 2026-05-22
+---
+```
+
+4. Open a pull request
+
+That's it. See [CONTRIBUTING.md](CONTRIBUTING.md) for full details, including how to +1 a book that's already on the shelf.
+
+## Browse tags
+
+`sci-fi` `fantasy` `fiction` `non-fiction` `history` `philosophy` `biography` `technology` `ai` `litrpg` `classics` `thriller` `humor` `science` `anthropology` `sociology` `self-help` `literary-fiction` `historical-fiction` `essays` `career` `engineering`
+
+## Run locally
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Opens at `localhost:4321`.
 
-## 🚀 Project Structure
+## Tech
 
-Inside of your Astro project, you'll see the following folders and files:
+Astro, React, Tailwind CSS. Static site — no backend, no database, no auth.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## License
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Content contributions are the opinions of their authors. The site code is open source.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+---
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+*A community project. Not affiliated with or endorsed by Red Hat, Inc.*
