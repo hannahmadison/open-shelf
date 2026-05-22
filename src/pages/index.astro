@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import { getCollection } from "astro:content";
+
+const reads = await getCollection("reads");
+const sortedReads = reads
+  .sort((a, b) => b.data.date_added.getTime() - a.data.date_added.getTime())
+  .map((entry) => ({
+    title: entry.data.title,
+    author: entry.data.author,
+    type: entry.data.type,
+    link: entry.data.link,
+    tags: entry.data.tags,
+    blurb: entry.data.blurb,
+    dateAdded: entry.data.date_added.toISOString().split("T")[0],
+  }));
+---
+
+<BaseLayout title="Home">
+  <HeroSection />
+  <section class="pb-16">
+    <p class="text-navy-400 text-sm">{sortedReads.length} entries loaded. FilterableGrid coming next.</p>
+    {sortedReads.map((read) => (
+      <div class="py-2 text-navy-300">
+        <strong class="text-white">{read.title}</strong> by {read.author}
+      </div>
+    ))}
+  </section>
+</BaseLayout>
+
