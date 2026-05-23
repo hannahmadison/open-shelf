@@ -21,7 +21,7 @@ date_added: 2026-05-22  # today's date
 ---
 ```
 
-5. Open a merge request
+5. Open a pull request
 
 ## Already on the shelf?
 
@@ -30,7 +30,7 @@ If the book, article, or blog you want to recommend is already listed:
 1. Find the existing file in `content/reads/`
 2. Bump the `recommendations` count by 1
 3. Optionally, add your name to `recommended_by` (totally optional — you can stay anonymous)
-4. Open a merge request
+4. Open a pull request
 
 For example, if `project-hail-mary.md` has `recommendations: 5`, change it to `recommendations: 6`. If you want credit, add:
 
@@ -46,7 +46,7 @@ recommended_by: [Existing Person, Your Name]
 
 ## Guidelines
 
-- **One entry per MR** — keeps reviews fast
+- **One entry per PR** — keeps reviews fast
 - **`type`** must be one of: `book`, `article`, `blog`
 - **`tags`** — use lowercase, keep them short. Browse existing entries for inspiration
 - **`blurb`** — keep it to 1-2 sentences. What made it worth your time?
@@ -55,4 +55,4 @@ recommended_by: [Existing Person, Your Name]
 
 ## What happens next
 
-When your MR is merged, the site automatically rebuilds and your entry appears on the shelf.
+When your PR is merged, the site automatically rebuilds and your entry appears on the shelf.
